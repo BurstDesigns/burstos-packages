@@ -1,0 +1,11 @@
+--- src/main.c	2026-09-25 05:13:14.000000000 -0400
++++ src/main_patched.c	2026-11-13 11:34:20.759567247 -0500
+@@ -203,7 +203,7 @@
+ 
+ struct wayland* wayland = NULL;
+ 
+-extern struct screencopy_impl wlr_screencopy_impl, ext_image_copy_capture_impl;
++extern struct screencopy_impl wlr_screencopy_impl;
+ 
+ static void cancel_deferred_detach(struct wayvnc* self)
+ {
