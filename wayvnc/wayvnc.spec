@@ -10,7 +10,7 @@ URL:            https://github.com/any1/wayvnc
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 Source1:        https://github.com/any1/aml/archive/v%{aml_version}/aml-%{aml_version}.tar.gz
 Source2:        https://github.com/any1/neatvnc/archive/v%{nvnc_version}/neatvnc-%{nvnc_version}.tar.gz
-Patch0:         force-wlr-screencopy.patch
+Patch0:         screencopy-interface.patch
 
 BuildRequires:  gcc
 BuildRequires:  meson

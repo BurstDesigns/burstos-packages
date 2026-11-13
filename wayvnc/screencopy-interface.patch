@@ -1,0 +1,22 @@
+--- a/src/screencopy-interface.c	2026-11-13 12:56:19.261767440 -0500
++++ b/src/screencopy-interface.c	2026-11-13 12:58:30.683739690 -0500
+@@ -31,9 +31,6 @@
+ {
+ 	if (image_source_is_desktop(source))
+ 		return desktop_capture_impl.create(source, render_cursor);
+-	if (wayland->ext_image_copy_capture_manager_v1 &&
+-			wayland->ext_output_image_capture_source_manager_v1)
+-		return ext_image_copy_capture_impl.create(source, render_cursor);
+ 	if (wayland->zwlr_screencopy_manager_v1)
+ 		return wlr_screencopy_impl.create(source, render_cursor);
+ 	return NULL;
+@@ -44,9 +41,6 @@
+ {
+ 	if (image_source_is_desktop(source))
+ 		return desktop_capture_impl.create_cursor(source, seat);
+-	if (wayland->ext_image_copy_capture_manager_v1 &&
+-			wayland->ext_output_image_capture_source_manager_v1)
+-		return ext_image_copy_capture_impl.create_cursor(source, seat);
+ 	return NULL;
+ }
+ 
